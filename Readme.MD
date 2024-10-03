@@ -20,9 +20,9 @@ $ python --version
 
 ####Clone Repository  
 ```
-$ cd <your_projects_root>
-$ git clone https://github.com/srikaanth/saucedemo.git
-$ cd yahoo-finance-automation
+$ cd saucedemo_e-commerce
+$ git clone https://github.com/sreeekanthmaddula/SourceLab.git
+$ cd saucedemo
 ```
 ####Install requirements
 ```
