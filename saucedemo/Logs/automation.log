@@ -1,0 +1,43 @@
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\sreek\.wdm\drivers\chromedriver\win64\129.0.6668.89\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:test_login.py:22 *************** Test_001_Login *****************
+INFO     root:test_login.py:23 ****Started Home page title test for automation ****
+INFO     root:test_login.py:25 ****Opening URL****
+INFO     root:test_login.py:30 **** Home page title test passed ****
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\sreek\.wdm\drivers\chromedriver\win64\129.0.6668.89\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:test_login.py:39 ****Started Login Test****
+INFO     root:test_login.py:49 ****Login test passed ****
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\sreek\.wdm\drivers\chromedriver\win64\129.0.6668.89\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:test_login.py:57 ****Started Login Test****
+INFO     root:test_login.py:68 ****Login test passed ****
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\sreek\.wdm\drivers\chromedriver\win64\129.0.6668.89\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:test_login.py:76 ****Started Login Test****
+INFO     root:test_login.py:86 ****Login test passed ****
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\sreek\.wdm\drivers\chromedriver\win64\129.0.6668.89\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:test_login.py:95 ****Started Login Test****
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\sreek\.wdm\drivers\chromedriver\win64\129.0.6668.89\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:test_login.py:113 ****Started Login Test****
+INFO     root:test_login.py:123 ****Login test passed ****
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\sreek\.wdm\drivers\chromedriver\win64\129.0.6668.89\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:test_login.py:131 ****Started Login Test****
+INFO     root:test_login.py:139 ****Login test passed ****
