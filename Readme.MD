@@ -30,11 +30,11 @@ $ python --version
 ```
 $ cd saucedemo_e-commerce
 $ git clone https://github.com/sreeekanthmaddula/SourceLab.git
-<<<<<<< HEAD
+
 $ cd SourceLab
 =======
 $ cd saucedemo
->>>>>>> 278934b4cda3423fb92a121df37a848a62c40f8e
+
 ```
 ####Install requirements
 ```
@@ -50,7 +50,7 @@ Run all tests locally
 pytest -s -v -m "login" --log-file=./Logs/automation.log --html=./Reports/report.html --self-contained-html --capture sys -rP  --disable-warnings testCases/test_login.py --browser chrome
 
 ```
-<<<<<<< HEAD
+
 ####Contributing
 To contribute:
 1. Fork the repository.
@@ -61,4 +61,4 @@ To contribute:
 
 =======
  
->>>>>>> 278934b4cda3423fb92a121df37a848a62c40f8e
+
