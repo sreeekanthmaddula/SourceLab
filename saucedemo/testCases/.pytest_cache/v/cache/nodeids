@@ -1,0 +1,13 @@
+[
+  "test_cart.py::Test_Cart::test_login",
+  "test_checkout.py::Test_Checkout::test_login",
+  "test_login.py::Test_Login::test_homePageTitle",
+  "test_login.py::Test_Login::test_invalid_login",
+  "test_login.py::Test_Login::test_locked_login",
+  "test_login.py::Test_Login::test_login",
+  "test_login.py::Test_Login::test_missed_cred_login",
+  "test_login.py::Test_Login::test_performance_login",
+  "test_login.py::Test_Login::test_problem_login",
+  "test_product.py::Test_Login::test_login",
+  "test_productdetails.py::Test_ProductDetails::test_login"
+]

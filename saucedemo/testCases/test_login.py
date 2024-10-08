@@ -97,7 +97,7 @@ class Test_Login():
         self.driver.get(self.baseURL)
         self.lp = LoginPage(self.driver)
         self.lp.setUserName(self.performance_username)
-        self.lp.setPassword(self.passworsd)
+        self.lp.setPassword(self.password)
         self.lp.clickLogin()
         time.sleep(10)
         ecomm_title = self.lp.Homepage_Value

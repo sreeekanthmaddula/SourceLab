@@ -1,175 +1,103 @@
 TEST-STRATEGY
 
-Test Strategy for REST API Automation: Petstore API
+TTesttrategy for REST API Automation: Petstore API
 This test strategy focuses on the API testing for the Petstore Swagger API. The objective is to validate the functionality, performance, and reliability of the API by automating test cases for creating, modifying, and deleting data. The strategy will also cover testing for different HTTP status codes, edge cases, and invalid inputs.
 
-1. Objective
+Example Adding API Testing 1  https://petstore.swagger.io/#/pet/addPet :
+
+| Test case No | Severity | Priority | Test Case description                                                                                                                                                  | Expected Results | Actual Results                                                       | Screenshots                                                                                                                                                 |
+|--------------|----------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TC_0001      | HIGH     | Medium   | When an invalid JSON payload is sent (e.g., missing required fields), the API returns a generic 500 Internal Server Error instead of a more descriptive error message. |     clear and user-friendly error message | This impacts the usability of the API as developers do not receive clear feedback on what went wrong. | <Screenshot>                                                                                                                                                |
+| TC_0002      | Medium      | HIGH     | When sending a request with an invalid status value (e.g., “unknown”), the API still returns a 200 OK status instead of a 400 Bad Request.|    clear and user-friendly error message. |      This should be fixed promptly to ensure data integrity and proper error handling.      | <Screenshot>                                                                                                                                                |
+| TC_0003      | Low      | Low      | The API does not validate the photoUrls field properly. If an empty array is provided, the pet is still added without any error.|     clearly specify the expected input formats and error responses.     |     This does not break the functionality but can lead to incomplete data being stored. | <Screenshot>                                                                                                                                                |
+| TC_0006      | HIGH     | HIGH     | Sending the request without the required API key in the headers.                                                                 | The API should return a 401 Unauthorized status code.           | Returning Status Code : 200.                                                                                                                                                                                                                              | <Screenshot>                                                                                                                                                |
+| TC_0007      | HIGH      | HIGH     | Sentive data should not be passed in API Header.                                                                                 | API HEader should not contain any sensitive data.               | Returing access-control-allow-headers: Content-Type,api_key,Authorization  access-control-allow-methods: GET,POST,DELETE,PUT access-control-allow-origin: * content-type: application/json date: Tue,08 Oct 2024 06:55:08 GMT serveJey(9.2.9.v20150224) . | <Screenshot>                                                                                                                                                | 
+
+Example Adding API Testing 2  https://petstore.swagger.io/#/pet/updatePet :
+
+| Test case No | Severity | Priority | Test Case description                                                                                                            | Expected Results                                                | Actual Results                                                                                                                                                                                                                                            | Screenshots                                                                                                                                                 |
+|--------------|----------|----------|----------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TC_0004      | HIGH     | HIGH     | Sending the request without the required API key in the headers.                                                                 | The API should return a 401 Unauthorized status code.           | Returning Status Code : 200.                                                                                                                                                                                                                              | <Screenshot>                                                                                                                                                |
+| TC_0005      | HIGH      | HIGH     | Sentive data should not be passed in API Header.                                                                                 | API HEader should not contain any sensitive data.               | Returing access-control-allow-headers: Content-Type,api_key,Authorization  access-control-allow-methods: GET,POST,DELETE,PUT access-control-allow-origin: * content-type: application/json date: Tue,08 Oct 2024 06:55:08 GMT serveJey(9.2.9.v20150224) . | <Screenshot>                                                                                                                                                | 
+
+Example Adding API Testing 2  https://petstore.swagger.io/#/pet/updatePet :
+
+| Test case No | Severity | Priority | Test Case description                                                                                                                                                                                        | Expected Results                                                | Actual Results                                                                                                                                                                                                                                            | Screenshots                                                                                                                                                 |
+|--------------|----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TC_0008      | Critical     | HIGH     | Sending the request without the required API key in the headers.                                                                                                                                             | The API should return a 401 Unauthorized status code.           | Returning Status Code : 200.                                                                                                                                                                                                                              | <Screenshot>                                                                                                                                                |
+| TC_0009      | HIGH      | HIGH     | Sentive data should not be passed in API Header.                                                                                                                                                             | API HEader should not contain any sensitive data.               | Returing access-control-allow-headers: Content-Type,api_key,Authorization  access-control-allow-methods: GET,POST,DELETE,PUT access-control-allow-origin: * content-type: application/json date: Tue,08 Oct 2024 06:55:08 GMT serveJey(9.2.9.v20150224) . | <Screenshot>                                                                                                                                                | 
+| TC_00010     | HIGH      | HIGH     | Open the Authorization URL: Go to Swagger Petstore OAuth2 Authorization. Enter Client ID: Input sree as the client_id. Proceed with Authorization: Follow the prompts to complete the authorization process. | Upon successful authorization, it should redirect to the specified redirect URI with an authorization code or token.              | Returing Error as {"error": "invalid_client","error_description": "Client authentication failed"}.                                                                                                                                                                                                                                       | <Screenshot>                                                                                                                                                | 
+
+
+## Objective
 The objective is to automate test cases for the Petstore API to ensure that all endpoints perform as expected for creating, updating, retrieving, and deleting pet records. The tests will cover happy path scenarios, edge cases, and error-handling mechanisms.
 
-2. Scope of Testing
+## Scope of Testing
 The following API operations will be tested:
 
-POST: Create a new pet.
-GET: Retrieve pet details.
-PUT: Update an existing pet.
-DELETE: Delete a pet by ID.
-Validation of status codes (200, 201, 400, 404, 500).
-Input validation (valid, invalid, incorrect formats).
-Security and data integrity.
-3. Test Levels
-Functional Testing:
+* POST: Create a new pet.
+* GET: Retrieve pet details.
+* PUT: Update an existing pet.
+* DELETE: Delete a pet by ID.
 
-Validate that the API works correctly for all CRUD operations (Create, Retrieve, Update, Delete).
-Verify input validation for required and optional fields.
-Ensure proper response codes for valid and invalid data.
-Negative Testing:
-
-Test for invalid requests, incorrect formats, missing fields, and unauthorized access.
-Ensure appropriate error messages are returned for each failure scenario.
-Regression Testing:
-
-Automate test suites to ensure that changes to the API do not break existing functionality.
-Performance Testing:
-
-Test the API under different loads and measure response times.
-Security Testing:
-
-Validate authorization and authentication mechanisms (if applicable).
-Test for common vulnerabilities such as SQL injection, broken authentication, and data exposure.
-4. Test Automation Framework
-Tools:
-
-Programming Language: Python
-Testing Framework: PyTest
-Libraries: Requests (for API calls), JSON, and logging.
-Continuous Integration: Jenkins for automated test execution.
-Version Control: GitHub for managing codebase and test scripts.
-Reporting: Allure or HTML reports for test execution results.
-
-TEST-PLANS
-
-5. Test Plan
-A. POST: Create a New Pet
-Objective: Verify that a new pet can be created using the POST API endpoint.
-
-Test Scenarios:
-Create a new pet with valid data.
-Attempt to create a pet with missing required fields (e.g., missing name or status).
-Create a pet with invalid data (e.g., incorrect id format, invalid characters in name).
-Ensure the API returns 201 Created for successful requests.
-Validate that invalid requests return 400 Bad Request or other appropriate status codes.
-Test boundary conditions (e.g., max length for pet name, special characters).
-
-
-
-Test Data:
-
-Valid Pet:
-json
-Copy code
-{
-  "id": 123456,
-  "name": "Fluffy",
-  "status": "available"
-}
-Invalid Pet:
-json
-Copy code
-{
-  "id": "abc123",
-  "name": ""
-}
-Priority: High
-
-B. GET: Retrieve Pet by ID
-Objective: Verify that a pet's details can be retrieved using its ID.
-
-Test Scenarios:
-Retrieve pet details with a valid ID.
-Attempt to retrieve a pet with an invalid ID (e.g., pet does not exist).
-Test retrieving a pet with missing or incorrect ID format.
-Ensure a valid response returns status code 200 OK.
-Validate that 404 Not Found is returned for a pet that doesn't exist.
-Verify response time and structure of the returned data.
-Test Data:
-
-Valid ID: 123456
-Invalid ID: -9999 or a non-existent pet ID
-Priority: High
-
-C. PUT: Update an Existing Pet
-Objective: Verify that an existing pet’s information can be updated using the PUT endpoint.
-
-Test Scenarios:
-Update an existing pet with valid data.
-Attempt to update a pet with invalid data (e.g., invalid status, incorrect id format).
-Update a non-existent pet and verify the response.
-Validate that a successful update returns 200 OK.
-Test edge cases such as updating with missing fields.
-Test Data:
-
-Valid Update:
-json
-Copy code
-{
-  "id": 123456,
-  "name": "Fluffy",
-  "status": "sold"
-}
-Priority: Medium
-
-D. DELETE: Delete a Pet by ID
-Objective: Ensure that pets can be deleted by their ID using the DELETE endpoint.
-
-Test Scenarios:
-Delete an existing pet and validate the response.
-Attempt to delete a non-existent pet and verify the 404 Not Found response.
-Test deleting a pet with an invalid or incorrect ID format.
-Ensure the API returns 200 OK or 204 No Content for successful deletion.
-Validate that a pet cannot be retrieved after deletion.
-Test Data:
-
-Valid ID for deletion: 123456
-Invalid ID for deletion: -9999 or non-existent ID
-Priority: High
-
-E. Input Validation and Error Handling
-Objective: Test various input validation and error-handling scenarios.
-
-Test Scenarios:
-Send an API request with missing required fields and ensure proper error messages.
-Use incorrect data types for fields (e.g., string for id instead of integer).
-Test invalid HTTP methods on each endpoint (e.g., using POST where PUT is expected).
-Validate response for unauthorized access if applicable.
-Test Data:
-
-Invalid Data: Invalid types, missing fields, extra fields
-Priority: Medium
-
-6. Test Environment
+#### Validation Criteria
+* Status codes: 200, 201, 400, 404, 500.
+* Input validation: Valid, invalid, incorrect formats.
+* Security and data integrity checks.
+## Test Levels
+#### Functional Testing
+* Validate CRUD operations.
+* Verify input validation for required and optional fields.
+* Ensure correct response codes for valid and invalid data.
+#### Negative Testing
+* Test invalid requests, incorrect formats, missing fields, unauthorized access.
+* Ensure appropriate error messages for failure scenarios.
+#### Regression Testing
+* Automate test suites to ensure API changes do not break existing functionality.
+#### Performance Testing
+* Test API under different loads and measure response times.
+#### Security Testing
+* Validate authorization and authentication mechanisms.
+* Test for vulnerabilities like SQL injection and data exposure.
+#### Test Automation Framework
+##### Tools
+* Programming Language: Python
+* Testing Framework: PyTest
+* Libraries: Requests, JSON, logging
+* Continuous Integration: Jenkins
+* Version Control: GitHub
+* Reporting: Allure or HTML reports
+## Test Plan
+#### A. POST: Create a New Pet
+* Objective: Verify creation of a new pet.
+#### Scenarios:
+* Valid data creation.
+* Missing required fields.
+* Invalid data formats.
+#### Priority: High
+#### B. GET: Retrieve Pet by ID
+* Objective: Verify retrieval of pet details.
+#### Scenarios:
+* Valid ID retrieval.
+* Invalid or non-existent ID.
+#### Priority: High
+#### C. PUT: Update an Existing Pet
+* Objective: Verify updating pet information.
+#### Scenarios:
+* Valid data update.
+* Invalid data or non-existent pet.
+#### Priority: Medium
+#### D. DELETE: Delete a Pet by ID
+* Objective: Ensure pet deletion by ID.
+#### Scenarios:
+* Valid ID deletion.
+* Non-existent or invalid ID.
+#### Priority: High
+#### E. Input Validation and Error Handling
+* Objective: Test input validation and error handling.
+#### Scenarios:
+* Missing fields, incorrect data types.
+* Invalid HTTP methods.
+* Priority: Medium
+### Test Environment
 API Endpoint: https://petstore.swagger.io/v2/
-Test Data: Predefined and dynamically generated pet data.
-Environment Setup: Local development environment for running tests, CI/CD pipeline for automated execution.
-Test Execution: Automate test execution using Jenkins with scheduled runs on code commits.
-7. Test Execution and Automation
-Manual Testing:
-
-Functional testing of all critical APIs (happy paths and edge cases).
-Automated Testing:
-
-Automate all CRUD operations (POST, GET, PUT, DELETE) with positive and negative scenarios using PyTest and Requests.
-Schedule automated regression runs on Jenkins with test reports.
-8. Entry and Exit Criteria
-Entry Criteria:
-
-API endpoints must be functional and accessible.
-Test data is prepared and environments are set up.
-Exit Criteria:
-
-All test cases have been executed with 95% pass rate.
-No high-priority defects remain unresolved.
-9. Risk Analysis
-Invalid data handling could lead to errors in production.
-Performance issues under load could affect user experience.
-Security vulnerabilities might expose sensitive data.
-Mitigation: Focus on thorough negative testing, edge case validation, and early performance tests.

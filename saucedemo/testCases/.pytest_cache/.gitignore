@@ -1,0 +1,10 @@
+# Created by pytest automatically.
+*.png
+*.html
+.idea/
+*.pyc
+*.xml
+*.log
+.DS_Store
+venv/
+.vscode/

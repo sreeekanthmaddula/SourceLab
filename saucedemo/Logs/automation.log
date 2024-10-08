@@ -29,6 +29,7 @@ INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Driver [C:\Users\sreek\.wdm\drivers\chromedriver\win64\129.0.6668.89\chromedriver-win32/chromedriver.exe] found in cache
 INFO     root:test_login.py:95 ****Started Login Test****
+INFO     root:test_login.py:105 ****Login test passed ****
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
